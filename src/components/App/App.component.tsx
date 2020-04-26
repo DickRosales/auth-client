@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { LightTheme } from '../../constants/theme'
@@ -7,7 +7,7 @@ import PrivateRoute from './PrivateRoute.component';
 import LoginPage from '../../domain/Login';
 import AssetsPage from '../../domain/Assets';
 
-function App() {
+let App: FunctionComponent = () => {
 
   return (
     <ThemeProvider theme={LightTheme}>
@@ -38,6 +38,6 @@ function App() {
 
     </ThemeProvider>
   );
-}
+};
 
 export default App;

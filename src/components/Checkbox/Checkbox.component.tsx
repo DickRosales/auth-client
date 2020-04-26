@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
-const CheckboxComponent = ({ className, checked, ...props }: any) => (
-  <CheckboxContainer className={className}>
+const CheckboxComponent: FunctionComponent<{ onChange: () => void, checked: boolean }> = ({ checked, ...props }) => (
+  <CheckboxContainer>
     <HiddenCheckbox checked={checked} {...props} />
     <StyledCheckbox checked={checked}>
       <Icon viewBox="0 0 24 24">
@@ -18,7 +18,6 @@ const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
 `
-
 const Icon = styled.svg`
   fill: none;
   stroke: white;

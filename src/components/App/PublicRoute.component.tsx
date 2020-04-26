@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FunctionComponent, ReactChild } from 'react';
 import { Route, Redirect, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { isAuthenticated } from '../../services/Auth'
 
 // A wrapper for <Route> that redirects to the overview
 // screen if you are authenticated.
-let PublicRoute = ({ children, ...rest }: any) => {
+let PublicRoute: FunctionComponent<{ children: ReactChild, path: string }> = ({ children, ...rest }: any) => {
   let location = useLocation();
   console.info('rendered: public route')
   

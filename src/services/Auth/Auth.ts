@@ -8,12 +8,9 @@ let authenticate = (token: string, cb: () => void): void => {
   setTimeout(() => cb(), 0);
 }
 
-let signout = (cb: () => void) => {
+let logout = (cb: () => void): void => {
   remove('token');
-  setTimeout(() => cb(), 0);
-  // let history = useHistory();
-
-  // history.push("/");
+  setTimeout(() => cb(), 200);
 }
 
-export { isAuthenticated, authenticate, signout };
+export { isAuthenticated, authenticate, logout };

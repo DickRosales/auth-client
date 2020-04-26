@@ -1,11 +1,11 @@
-import React, { Fragment, useState, FormEvent } from 'react';
+import React, { FunctionComponent, Fragment, useState, FormEvent } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { LoginRequest } from '../../services/Api'
 import { authenticate } from '../../services/Auth'
 import Checkbox from '../../components/Checkbox'
 
-let LoginPage = () => {
+let LoginPage: FunctionComponent = () => {
   const history = useHistory();
   const location = useLocation();
   const [ email, setEmail ] = useState<string>('');
@@ -46,7 +46,7 @@ let LoginPage = () => {
             </FormGroup>
 
             <PasswordGroup>
-              <div onChange={() => setChecked(!checked)} >
+              <div onClick={() => setChecked(!checked)}>
                 <RememberPassword onChange={() => {}} checked={checked} />
                 <FormLabel>Remember me</FormLabel>
               </div>
@@ -127,7 +127,7 @@ const FormGroup = styled.div`
   border-width: 2px 2px 0 2px;
   border-style: solid;
   border-color: ${({ theme }) => theme.colors.neutral['400']};
-
+  
   &:nth-child(2) {
     border-width: 2px 2px 2px 2px;
   }

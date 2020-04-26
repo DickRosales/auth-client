@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { FunctionComponent, Fragment } from 'react';
 import styled from 'styled-components';
 import { MdExpandMore, MdMoreHoriz } from 'react-icons/md';
 import Header from '../../components/Header'
 
-function AssetsPage() {
+let AssetsPage: FunctionComponent = () => {
 
   return (
     <Fragment>

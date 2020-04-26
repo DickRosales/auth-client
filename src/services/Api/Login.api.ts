@@ -1,7 +1,7 @@
 import Api from './Api';
 
 // Should handle errors here
-const LoginRequest = async ({ email, password }: any): Promise<any> => {
+const LoginRequest = async ({ email, password }: { email: string, password: string }): Promise<any> => {
   return await Api.post('/auth/in', { email, password });
 
     

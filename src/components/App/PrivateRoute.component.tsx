@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { FunctionComponent, ReactChild } from 'react';
 import { Route, Redirect, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { isAuthenticated } from '../../services/Auth'
 import Menu from '../Menu';
 
-let PrivateRoute = ({ children, ...rest }: any) => {
+let PrivateRoute: FunctionComponent<{ children: ReactChild, path: string }> = ({ children, ...rest }) => {
   let location = useLocation();
   console.info('rendered: private route')
 
   return (
     <PrivateWrapper>
-      <PrivateContainer>
-        <Menu />
-        
+      <Menu />
+
+      <PrivateContainer>  
         { isAuthenticated() ? (
           <Route {...rest}>
             {children}
@@ -37,7 +37,7 @@ const PrivateWrapper = styled.div`
   color: ${({ theme }) => theme.colors.white};
 `;
 const PrivateContainer = styled.div`
-  flex-grow: 2;
+  flex-grow: 2; 
   padding: 60px;
 `;
 

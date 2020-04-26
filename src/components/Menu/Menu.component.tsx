@@ -1,9 +1,15 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { FunctionComponent, MouseEvent } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-// import logo from '../../common/images/logo.svg';
+import { logout } from '../../services/Auth'
 
-function MenuComponent() {
+let MenuComponent: FunctionComponent = () => {
+  const history = useHistory();
+
+  let handleLogout = (event: MouseEvent): void => {
+    event.preventDefault();
+    logout(() => {history.push("/")});
+  }
 
   return (
     <Menu>
@@ -25,7 +31,7 @@ function MenuComponent() {
 
       <LinkList>
         <Link to='/account'>Account</Link>
-        <Link to='/contact'>Contact</Link>
+        <LogoutLink onClick={handleLogout}>Log out</LogoutLink>
       </LinkList>
       
     </Menu>
@@ -66,9 +72,26 @@ const Link = styled(NavLink)`
   font-weight: 600;
   margin: 16px 0;
   color: #51525C;
+  cursor: pointer;
 
   &.active {
     color: #E8E7EC;
   }
 `;
+const LogoutLink = styled.button`
+  display: block;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 16px 0;
+  color: #51525C;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  padding: 0;
 
+  &.active {
+    color: #E8E7EC;
+  }
+`;

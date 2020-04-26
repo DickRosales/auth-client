@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { MdFilterList, MdViewModule, MdViewList, MdCreateNewFolder, MdSearch } from 'react-icons/md';
 // import logo from '../../common/images/logo.svg';
 
-function MenuComponent() {
+let MenuComponent: FunctionComponent = () => {
 
   return (
     <Header>
