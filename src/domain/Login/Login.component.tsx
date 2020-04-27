@@ -72,7 +72,7 @@ export default LoginPage;
 
 const AppLogin = styled.div`
   display: flex;
-  flex-flow: row;
+  flex-flow: row nowrap;
   width: 100%;
   height: 100vh;
 `;
@@ -80,12 +80,17 @@ const LoginWrapper = styled.div`
   width: 550px;
   min-width: 33%;
   height: 100%;
-  background-color: ${({ theme }) => theme.colors.neutral['900']};
+  background-color: ${({ theme }) => theme.colors.background['base']};
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
   padding-top: 50px;
+`;
+const LoginAd = styled.div`
+  height: 100%;
+  flex-grow: 2;
+  background-color: ${({ theme }) => theme.colors.background['body']};
 `;
 const LoginForm = styled.form`
   width: 350px;
@@ -99,9 +104,10 @@ const LoginLogo = styled.span`
   font-weight: 600;
   width: 100%;
   margin-bottom: 18.5vh;
+  color: ${({ theme }) => theme.colors.accent['200']};
 
   span {
-    /* color: ${({ theme }) => theme.colors.primary['600']}; */
+    color: ${({ theme }) => theme.colors.accent['base']};
   }
 `;
 const LoginTitle = styled.h1`
@@ -109,12 +115,14 @@ const LoginTitle = styled.h1`
   font-weight: 700;
   width: 100%;
   margin-bottom: 15px;
+  color: ${({ theme }) => theme.colors.text['base']};
 `;
 const LoginMessage = styled.p`
   font-size: 15px;
   font-weight: 400;
   width: 100%;
   margin-bottom: 40px;
+  color: ${({ theme }) => theme.colors.text['100']};
 `;
 const FormGroup = styled.div`
   position: relative;
@@ -122,14 +130,14 @@ const FormGroup = styled.div`
   height: auto;
   display: flex;
   flex-flow: column;
-  background-color: ${({ theme }) => theme.colors.white};
-  color: ${({ theme }) => theme.colors.black};
   border-width: 2px 2px 0 2px;
   border-style: solid;
-  border-color: ${({ theme }) => theme.colors.neutral['400']};
-  
-  &:nth-child(2) {
-    border-width: 2px 2px 2px 2px;
+  border-color: ${({ theme }) => theme.colors.accent['base']};
+  background-color: ${({ theme }) => theme.colors.background['body']};
+  color: ${({ theme }) => theme.colors.text['base']};
+
+  &:nth-of-type(2) {
+    border-width: 2px;
   }
 `;
 const FormLabel = styled.label`
@@ -137,10 +145,12 @@ const FormLabel = styled.label`
   font-weight: 400;
   user-select: none;
   padding: 5px 0 0 10px;
+  color: ${({ theme }) => theme.colors.text['base']};
 `;
 const FormInput = styled.input`
   font-size: 16px;
-  background-color: transparent;
+  color: ${({ theme }) => theme.colors.text['base']};
+  background-color: ${({ theme }) => theme.colors.transparent};;
   border: 0;
   padding: 10px 15px;
 
@@ -179,7 +189,6 @@ const ButtonGroup = styled.div`
 const FormButton = styled.button`
   width: 100px;
   height: 40px;
-  line-height: 40px;
   font-size: 15px;
   text-align: center;
   margin-right: 15px;
@@ -187,17 +196,10 @@ const FormButton = styled.button`
   border: 1px solid #E8E7EC;
   padding: 0 2px;
   outline: 0;
-  /* border-radius: 3px; */
 
   &:nth-child(1) {
-    background-color: ${({ theme }) => theme.colors.white};
-    color: ${({ theme }) => theme.colors.black};
-    /* background-color: ${({ theme }) => theme.colors.primary['600']};
-    border: 1px solid ${({ theme }) => theme.colors.primary['600']}; */
+    border: 1px solid ${({ theme }) => theme.colors.accent['base']};
+    background-color: ${({ theme }) => theme.colors.accent['base']};;
+    color: ${({ theme }) => theme.colors.white};
   }
 `;
-const LoginAd = styled.div`
-  flex-grow: 2;
-`;
-
- 

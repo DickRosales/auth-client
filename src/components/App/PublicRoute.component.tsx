@@ -27,12 +27,10 @@ let PublicRoute: FunctionComponent<{ children: ReactChild, path: string }> = ({ 
 export default PublicRoute;
 
 const PublicWrapper = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.black};
-  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.background['base']};
+  color: ${({ theme }) => theme.colors.text['base']};
 `;
 const PublicContainer = styled.div``;

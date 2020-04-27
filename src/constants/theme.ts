@@ -71,8 +71,34 @@ let DarkTheme =  {
   colors: {
     transparent: 'transparent',
     current: 'currentColor',
-    black: '#1B1B1F',
-    white: '#E8E7EC',
+    
+    black: '#18181B',
+    white: '#FDFDFD',
+    background: {
+      base: '#18181B',
+      body: '#0E0E10',
+      100: '#1F1F23',
+      200: '#26262C'
+    },
+    accent: {
+      base: '#6C3DDF',
+      100: '#5129BF',
+      200: '#3D1E8E'
+    },
+    fill: {
+      base: '#8554F6',
+      info: '#266EF6',
+      warning: '#F9CB72',
+      alert: '#D73629',
+      success: '#65E0CA'
+    },
+    text: {
+      base: '#FDFDFD',
+      link: '#D1D1D1',
+      100: '#A2A2A4',
+      200: '#B799F9'
+    },
+
     primary: {
       100: '#FAF5FF',
       200: '#E9D8FD',
@@ -202,8 +228,34 @@ let LightTheme =  {
   colors: {
     transparent: 'transparent',
     current: 'currentColor',
-    black: '#1B1B1F',
-    white: '#E8E7EC',
+    
+    black: '#010101',
+    white: '#FFFFFF',
+    background: {
+      base: '#FFFFFF',
+      body: '#F7F7F8',
+      100: '#EFEFF1',
+      200: '#E6E6EA'
+    },
+    accent: {
+      base: '#6C3DDF',
+      100: '#5129BF',
+      200: '#3D1E8E'
+    },
+    fill: {
+      base: '#8554F6',
+      info: '#266EF6',
+      warning: '#F9CB72',
+      alert: '#D73629',
+      success: '#65E0CA'
+    },
+    text: {
+      base: '#010101',
+      link: '#6C3DDF',
+      100: '#343434',
+      200: '#676767'
+    },
+
     primary: {
       100: '#FAF5FF',
       200: '#E9D8FD',
